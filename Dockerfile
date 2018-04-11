@@ -1,5 +1,6 @@
 FROM php:7.1-fpm-alpine
 
+
 RUN set -xe \
   && apk add --no-cache py-setuptools git wget bash py-setuptools zlib-dev libpng-dev freetype-dev libjpeg-turbo-dev libmcrypt-dev libmemcached-dev icu-dev libxml2-dev \
   && apk add --no-cache libressl-dev cyrus-sasl-dev --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ rabbitmq-c-dev gnu-libiconv --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted \
