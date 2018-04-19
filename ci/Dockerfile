@@ -1,4 +1,4 @@
-FROM arielkung/fpm-alpine
+FROM dafiti-latam/fpm-alpine
 
 RUN set -xe \
   && apk add --no-cache wget git \
