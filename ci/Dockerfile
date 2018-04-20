@@ -1,4 +1,4 @@
-FROM dft-latam/fpm-alpine-bob
+FROM dftlatam/fpm-alpine-bob
 
 RUN set -xe \
   && apk add --no-cache wget git \
