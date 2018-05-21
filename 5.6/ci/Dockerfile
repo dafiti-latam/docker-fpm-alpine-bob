@@ -1,14 +1,9 @@
-FROM arielkung/fpm-alpine:5.6
+FROM dftlatam/docker-fpm-alpine:5.6
 
 RUN set -xe \
-  && apk add --no-cache wget git \
-  && wget https://pecl.php.net/get/xdebug \
-  && tar -xf xdebug \
-  && mkdir -p /usr/src/php/ext \
-  && mv xdebug-* /usr/src/php/ext/xdebug \
-  && docker-php-ext-install xdebug \
+  && apk add --no-cache wget git autoconf gcc g++ make \
+  && pecl install xdebug-2.5.5 \
   && wget https://getcomposer.org/composer.phar \
   && mv composer.phar /usr/local/bin/composer \
-  && apk del wget \
-  && rm -fr /usr/src/php/ext
-  
+  && chmod 755 /usr/local/bin/composer \
+  && apk del wget git autoconf gcc g++ make
