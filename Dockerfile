@@ -78,8 +78,8 @@ RUN cp /opt/newrelic/agent/x64/newrelic-20160303.so /usr/local/lib/php/extension
 RUN echo 'memory_limit = 2G' > /usr/local/etc/php/conf.d/settings.ini \
 	&& sed -i "s/;\{0,1\}pm.max_children =.*/pm.max_children = 50/g" /usr/local/etc/php-fpm.d/www.conf   \
 	&& sed -i "s/;\{0,1\}pm.start_servers =.*/pm.start_servers = 2/g" /usr/local/etc/php-fpm.d/www.conf   \
-	&& sed -i "s/;\{0,1\}pm.min_spare_servers=.*/pm.min_spare_servers = 2/g" /usr/local/etc/php-fpm.d/www.conf   \
-	&& sed -i "s/;\{0,1\}pm.max_spare_servers=.*/pm.max_spare_servers = 8/g" /usr/local/etc/php-fpm.d/www.conf   \
+	&& sed -i "s/;\{0,1\}pm.min_spare_servers =.*/pm.min_spare_servers = 2/g" /usr/local/etc/php-fpm.d/www.conf   \
+	&& sed -i "s/;\{0,1\}pm.max_spare_servers =.*/pm.max_spare_servers = 8/g" /usr/local/etc/php-fpm.d/www.conf   \
 	&& sed -i "s/;\{0,1\}pm.max_requests =.*/pm.max_requests = 500/g" /usr/local/etc/php-fpm.d/www.conf   \
 	&& sed -i 's/max_execution_time =.*/max_execution_time = 3600/g' /usr/local/etc/php/php.ini-production \
   && sed -i "s/access.log =.*/access.log = \/proc\/self\/fd\/1/" /usr/local/etc/php-fpm.d/docker.conf
